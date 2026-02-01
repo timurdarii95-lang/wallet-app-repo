@@ -11,7 +11,10 @@ class Wallet:
             self.money -= amount
         else:
             print("Fonduri insuficiente")
-
+    def transfer(self, other_wallet, amount):
+        if amount <= self.money:
+            self.money -= amount
+            other_wallet.money += amount
 
 my_wallet = Wallet()
 my_wallet.add_money(100)
